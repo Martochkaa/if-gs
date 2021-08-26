@@ -6,5 +6,16 @@
   },
   "scripts": {
     "prepare": "husky install"
+  },
+  "dependencies": {
+    "lint-staged": "^11.1.2"
+  },
+  "lint-staged": {
+    "*.(js|jsx)": ["npm run lint:write", "git add"]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
