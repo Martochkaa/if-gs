@@ -11,15 +11,15 @@ alert (Boolean (test)); // the test variable is converted to true
 let arr = [2, 3, 5, 8];
 let result = 1;
 for (let i = 0; i < arr.length; i++){
-
-result = result * arr[i];
+result*=arr[i];
 }
 alert (result);
 
 let arr1 = [2, 5, 8, 15, 0, 6, 20, 3];
 for (let i=0; i < arr1.length; i++) {
 if (arr1[i] > 5 && arr1[i] < 10){
-console.log(arr1[i]); }}
+console.log(arr1[i]); }
+}
 
 let arr2 = [2, 5, 8, 15, 0, 6, 20, 3];
 for (let i=0; i < arr2.length; i++)
