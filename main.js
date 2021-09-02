@@ -34,13 +34,13 @@ for (let i=0; i < arr2.length; i++)
   let strLen = str.length, strReverse = str.split ('') .reverse( ) .join('');
   // Разбила строку посимвольно и превратила в массив с помощью split ( '' ), применила метод reverse( ) и собрала все в символьную строку с помощью join( '' )
   if (strReverse == str) {
-      return 'true';
+      return Boolean(strReverse == str);
   } else {
-      return 'false'
+      return Boolean(strReverse == str);
   }
 }
-palindrome = isPalindrome ('lol');
-palindrome2 = isPalindrome ('marta');
+let palindrome = isPalindrome ('lol');
+let palindrome2 = isPalindrome ('marta');
 console.log (palindrome);
 console.log (palindrome2);
 
@@ -72,7 +72,7 @@ function max (a, b) {
 function changeZero (number) {
 const numStr = `${number}`; // нужно писать `${number}` именно в таком виде, чтобы замена вставилась на его место
 if (numStr.includes('0')){ // содержит ли элемент numStr 0 определяется через .includes('0')
-return `${number}`.replaceAll('0', 'zero'); // заменяет все 0 на zero через .replaceAll
+return numStr.replaceAll('0', 'zero'); // заменяет все 0 на zero через .replaceAll
 }
 return number;
 }
