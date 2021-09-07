@@ -94,21 +94,26 @@ console.log(sum(5)(2)); // 5
 
 
 
-var colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-var p_collect = document.getElementsByTagName('p');
+let colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+let  text1 = document.getElementById('text1');
+let  text2 = document.getElementById('text2');
+let  text3 = document.getElementById('text3');
 
-var f1 = function() {
-	var k = 0;
-	return function() {
-		this.style.color = colors[k];
+let f1 = () => {
+	let k = 0;
+	return function(event) {
+	    event.target.style.color = colors[k];
 		k++;
-		if (k == colors.length){k=0};
+		if (k >= colors.length){
+            k = 0;
+        }
 	}
 }
 
-for (var i = 0; i < p_collect.length; i++) {
-	p_collect[i].addEventListener('click', f1());
-}
+let chahgeColor1 = f1();
+let chahgeColor2 = f1();
+let chahgeColor3 = f1();
 
-
-  
+text1.addEventListener('click', chahgeColor1);
+text2.addEventListener('click', chahgeColor2);
+text3.addEventListener('click', chahgeColor3);
