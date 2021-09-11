@@ -34,13 +34,13 @@ for (let i=0; i < arr2.length; i++)
     let strLen = str.length, strReverse = str.split ('') .reverse( ) .join('');
     // Разбила строку посимвольно и превратила в массив с помощью split ( '' ), применила метод reverse( ) и собрала все в символьную строку с помощью join( '' )
     if (strReverse == str) {
-        return Boolean(strReverse == str);
+        return Boolean(strReverse === str);
     } else {
-        return Boolean(strReverse == str);
+        return Boolean(strReverse === str);
     }
   }
   let palindrome = isPalindrome ('lol');
-  let palindrome2 = isPalindrome ('marta');
+  const palindrome2 = isPalindrome ('marta');
   console.log (palindrome);
   console.log (palindrome2);
   
@@ -61,22 +61,22 @@ for (let i=0; i < arr2.length; i++)
   }
   
   //Функции через тернарный оператор
-  function min (a, b) {
+  function minimal (a, b) {
       return a < b ? a : b;
   }
   
-  function max (a, b) {
+  function maximum (a, b) {
       return a > b ? a : b;
   }
   
   function changeZero (number) {
-  const numStr = `${number}`; // нужно писать `${number}` именно в таком виде, чтобы замена вставилась на его место
+  const numStr = `${number}`; // нужно писать `${number}` именно в таком виде, чтобы привести в строчный вид
   if (numStr.includes('0')){ // содержит ли элемент numStr 0 определяется через .includes('0')
-  return numStr.replaceAll('0', 'zero'); // заменяет все 0 на zero через .replaceAll
+  return numStr.replaceAll('0', 'zero'); // replaceAll заменяет все 0 на zero через .replaceAll
   }
   return number;
   }
-  console.log ([80, 1, 2, 500] .map(changeZero).join(' ')); // .map позволило создать новый массив
+  console.log ([80, 1, 2, 500] .map(changeZero).join(' ')); // .map позволило создать новый массив, .join позволил объединить все элементы в строку
   
 
 
@@ -88,16 +88,15 @@ for (let i=0; i < arr2.length; i++)
     }
     return parseInt(a)+parseInt(b);
 }
-console.log(sum(5)(2)); // 5
+console.log(sum(5)(2)); // 7
 
-// module.exports = sum;
 
 
 
 let colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-let  text1 = document.getElementById('text1');
-let  text2 = document.getElementById('text2');
-let  text3 = document.getElementById('text3');
+const  text1 = document.getElementById('text1');
+const  text2 = document.getElementById('text2');
+const  text3 = document.getElementById('text3');
 
 let f1 = () => {
 	let k = 0;
