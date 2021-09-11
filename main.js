@@ -33,10 +33,10 @@ for (let i=0; i < arr2.length; i++)
   function isPalindrome(str) {
   let strLen = str.length, strReverse = str.split ('') .reverse( ) .join('');
   // Разбила строку посимвольно и превратила в массив с помощью split ( '' ), применила метод reverse( ) и собрала все в символьную строку с помощью join( '' )
-  if (strReverse == str) {
-      return Boolean(strReverse == str);
+  if (strReverse === str) {
+      return Boolean(strReverse === str);
   } else {
-      return Boolean(strReverse == str);
+      return Boolean(strReverse === str);
   }
 }
 let palindrome = isPalindrome ('lol');
