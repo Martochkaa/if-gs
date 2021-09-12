@@ -29,3 +29,90 @@ for (let i=0; i < arr2.length; i++)
         console.log(arr2[i]);
     }
   }
+
+  function isPalindrome(str) {
+    let strLen = str.length, strReverse = str.split ('') .reverse( ) .join('');
+    // Разбила строку посимвольно и превратила в массив с помощью split ( '' ), применила метод reverse( ) и собрала все в символьную строку с помощью join( '' )
+    if (strReverse == str) {
+        return Boolean(strReverse === str);
+    } else {
+        return Boolean(strReverse === str);
+    }
+  }
+  let palindrome = isPalindrome ('lol');
+  const palindrome2 = isPalindrome ('marta');
+  console.log (palindrome);
+  console.log (palindrome2);
+  
+  function min (a, b) {
+      if (a < b) {
+          return a;
+      } else {
+          return b;
+      }
+  }
+  
+  function max (a, b) {
+      if (a > b) {
+          return a;
+      } else {
+          return b;
+      }
+  }
+  
+  //Функции через тернарный оператор
+  function minimal (a, b) {
+      return a < b ? a : b;
+  }
+  
+  function maximum (a, b) {
+      return a > b ? a : b;
+  }
+  
+  function changeZero (number) {
+  const numStr = `${number}`; // нужно писать `${number}` именно в таком виде, чтобы привести в строчный вид
+  if (numStr.includes('0')){ // содержит ли элемент numStr 0 определяется через .includes('0')
+  return numStr.replaceAll('0', 'zero'); // replaceAll заменяет все 0 на zero через .replaceAll
+  }
+  return number;
+  }
+  console.log ([80, 1, 2, 500] .map(changeZero).join(' ')); // .map позволило создать новый массив, .join позволил объединить все элементы в строку
+  
+
+
+
+
+  function sum(a,b){
+    if(b===undefined){
+        return function(c){ return parseInt(a)+parseInt(c);} //  Функция parseInt преобразует первый переданный ей аргумент в строковый тип, интерпретирует его и возвращает целое число или значение NaN
+    }
+    return parseInt(a)+parseInt(b);
+}
+console.log(sum(5)(2)); // 7
+
+
+
+
+let colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+const  text1 = document.getElementById('text1');
+const  text2 = document.getElementById('text2');
+const  text3 = document.getElementById('text3');
+
+let f1 = () => {
+	let k = 0;
+	return function(event) {
+	    event.target.style.color = colors[k];
+		k++;
+		if (k >= colors.length){
+            k = 0;
+        }
+	}
+}
+
+let chahgeColor1 = f1();
+let chahgeColor2 = f1();
+let chahgeColor3 = f1();
+
+text1.addEventListener('click', chahgeColor1);
+text2.addEventListener('click', chahgeColor2);
+text3.addEventListener('click', chahgeColor3);
