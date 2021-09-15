@@ -366,15 +366,6 @@ function newData(d) {
   const options = hotels.filter (item => Object.values(item).some(val => val.toLocaleLowerCase().trim().includes(searchValue)))
   console.log (options)
 
-  let person1 = {
-      name: 'Bob',
-      surname: 'Jackson',
-  }
-Object.freeze(person1);
-const person2 = {...person1};
-  console.log (Object.isExtensible(person1));
-  console.log (Object.isExtensible(person2));
-
   const hotels1 = [
     {
       name: 'Hotel Leopold',
