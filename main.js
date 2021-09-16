@@ -33,7 +33,7 @@ for (let i=0; i < arr2.length; i++)
   function isPalindrome(str) {
     let strLen = str.length, strReverse = str.split ('') .reverse( ) .join('');
     // Разбила строку посимвольно и превратила в массив с помощью split ( '' ), применила метод reverse( ) и собрала все в символьную строку с помощью join( '' )
-        return Boolean(strReverse === str);}
+        return (strReverse === str);}
 
 
   let palindrome = isPalindrome ('lol');
@@ -134,7 +134,7 @@ let answer = [
 console.log(answer);
 
 function newData(d) {
-    if (+d < 10) return '0' + d;
+    if (d < 10) return '0' + d;
     return d;
   };
 
@@ -193,11 +193,11 @@ function newData(d) {
   //lesson-6
   
   function isPalindrome1(str1) {
-    str1Reverse = str1.split ('') .reverse( ) .join('') .toLocaleLowerCase();
-    return str1Reverse == str1 ? Boolean(str1Reverse === str1) : Boolean(str1Reverse === str1);
+    str1Reverse = str1.split ('') .reverse( ) .join('') .toLowerCase();
+    return str1Reverse == str1;
   }
   let palindrome1 = isPalindrome1 ('lol');
-  const palindrome0 = isPalindrome1 ('marta');
+  let palindrome0 = isPalindrome1 ('marta');
   console.log (palindrome1);
   console.log (palindrome0);
 
@@ -363,7 +363,7 @@ function newData(d) {
   ];
 
   let searchhotels = prompt('please type info').toLocaleLowerCase().trim();
-  const options = hotels.filter (item => Object.values(item).some(val => val.toLocaleLowerCase().trim().includes(searchValue)))
+  const options = hotels.filter (item => Object.values(item).some(val => val.toLocaleLowerCase().trim().includes(searchhotels)))
   console.log (options)
 
   const hotels1 = [
@@ -525,7 +525,7 @@ function newData(d) {
   ];
 
   let searchhotels1 = prompt('please type info').toLocaleLowerCase().trim();
-  let options1 = hotels1.filter (item => Object.values(item).some(val => val.toLocaleLowerCase().trim().includes(searchValue)))
+  let options1 = hotels1.filter (item => Object.values(item).some(val => val.toLocaleLowerCase().trim().includes(searchhotels1)))
   console.log (options1)
 
 
@@ -694,7 +694,7 @@ function СountriesAndCities(x) { // создаем пустую функцию 
     const resultarr = {}; // результат константы не может быть изменен новым присваиванием
 const arrcountry = [...new Set(x.map((item) => item.country))]; // из аргумента х вытягиваем переменные стран и записывываем этот массив в константу arrcountry
 for  (let i=0; i<arrcountry.length; i++) { // для полученного массива стран arrcountry
-    let str7 = arrcountry[i]; // приравниваем массив стран к переменной str1
+    const str7 = arrcountry[i]; // приравниваем массив стран к переменной str1
     const newArr = x.filter((item) => item.country === str7); // из этого же аргумента х вытягиваем массив стран сравниваем его (===) с переменной str1 и совпадения записываем в новую константу newArr
     resultarr[str7] = newArr.map((item) => item.city);// в константу resultarr записываем новый массив который будет к нашим совпадениям newArr вытягивать еще и города
 }
