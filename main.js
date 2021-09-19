@@ -196,8 +196,8 @@ function newData(d) {
     str1Reverse = str1.split ('') .reverse( ) .join('') .toLowerCase();
     return str1Reverse == str1;
   }
-  let palindrome1 = isPalindrome1 ('lol');
-  let palindrome0 = isPalindrome1 ('marta');
+  const palindrome1 = isPalindrome1 ('lol');
+  const palindrome0 = isPalindrome1 ('marta');
   console.log (palindrome1);
   console.log (palindrome0);
 
