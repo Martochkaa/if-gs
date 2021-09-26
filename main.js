@@ -33,8 +33,7 @@ for (let i=0; i < arr2.length; i++)
   function isPalindrome(str) {
     let strLen = str.length, strReverse = str.split ('') .reverse( ) .join('');
     // Разбила строку посимвольно и превратила в массив с помощью split ( '' ), применила метод reverse( ) и собрала все в символьную строку с помощью join( '' )
-        return (strReverse === str);}
-
+    return (strReverse === str);}
 
   let palindrome = isPalindrome ('lol');
   const palindrome2 = isPalindrome ('marta');
