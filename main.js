@@ -757,3 +757,4 @@ const obj1 = {
 
  console.log (deepEqual(obj1, obj2)); // true
  console.log (deepEqual(obj1, obj3)); // false
+ console.log (deepEqual (obj3, obj2)); // false
