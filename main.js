@@ -738,7 +738,7 @@ const obj1 = {
  };
 
  function deepEqual(obj1, obj2) { // Цикл через свойства объекта obj1
-    for (var p in obj1) { //Проверка на то, что оба объекта существуют
+    for (let p in obj1) { //Проверка на то, что оба объекта существуют
       if (obj1.hasOwnProperty(p) !== obj2.hasOwnProperty(p)) return false;
       switch (typeof (obj1[p])) {  // Глубокое сравнение объектов по ключам и значения:
         case 'object':
