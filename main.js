@@ -758,3 +758,71 @@ const obj1 = {
  console.log (deepEqual(obj1, obj2)); // true
  console.log (deepEqual(obj1, obj3)); // false
  console.log (deepEqual (obj3, obj2)); // false
+
+ //////////////lesson-8
+const studentsData = [
+  {
+    firstName: "Василий",
+    lastName: "Петров",
+    admissionYear: 2019,
+    courseName: "Java",
+  },
+  {
+    firstName: "Иван",
+    lastName: "Иванов",
+    admissionYear: 2018,
+    courseName: "JavaScript",
+  },
+  {
+    firstName: "Александр",
+    lastName: "Федоров",
+    admissionYear: 2017,
+    courseName: "Python",
+  },
+  {
+    firstName: "Николай",
+    lastName: "Петров",
+    admissionYear: 2019,
+    courseName: "Android",
+  },
+];
+ class User {
+  constructor(options) {
+    this.firstName = options.firstName;
+    this.lastName = options.lastName;
+  }
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+}
+class Student extends User {
+   constructor(options) {
+    super(options);
+    this.admissionYear = options.admissionYear;
+    this.courseName = options.courseName;
+  }
+  get course() {
+    return new Date().getFullYear() - this.admissionYear;
+  } 
+}
+class Students {        ///////////// когда класс состоит из массива (создайте класс Students, который включает в себя: students (constructor, на основе массива)
+  constructor(data) {
+    this.students = data.map( 
+      (item) => new Student({
+          firstName: item.firstName,
+          lastName: item.lastName,
+          admissionYear: item.admissionYear,
+          courseName: item.courseName,
+        })                 /////////////// то вот так оно будет записываться
+    );
+  }
+  getInfo() {
+    this.students.sort((a, b) => a.course - b.course); //////// сортировка по course
+    console.log(
+      this.students.map((item) => `${item.fullName} - ${item.courseName}, ${item.course} курс `)
+    );
+  }
+}
+
+const students = new Students(studentsData);
+console.log(students.getInfo());
