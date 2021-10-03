@@ -90,29 +90,29 @@ console.log(sum(5)(2)); // 7
 
 
 
-let colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-const  text1 = document.getElementById('text1');
-const  text2 = document.getElementById('text2');
-const  text3 = document.getElementById('text3');
+//let colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+//const  text1 = document.getElementById('text1');
+//const  text2 = document.getElementById('text2');
+//const  text3 = document.getElementById('text3');
 
-let f1 = () => {
-	let k = 0;
-	return function(event) {
-	    event.target.style.color = colors[k];
-		k++;
-		if (k >= colors.length){
-            k = 0;
-        }
-	}
-}
+//let f1 = () => {
+//	let k = 0;
+//	return function(event) {
+	//    event.target.style.color = colors[k];
+		//k++;
+//		if (k >= colors.length){
+  //          k = 0;
+    //    }
+	//}
+//}
 
-let chahgeColor1 = f1();
-let chahgeColor2 = f1();
-let chahgeColor3 = f1();
+//let chahgeColor1 = f1();
+//let chahgeColor2 = f1();
+///let chahgeColor3 = f1();
 
-text1.addEventListener('click', chahgeColor1);
-text2.addEventListener('click', chahgeColor2);
-text3.addEventListener('click', chahgeColor3);
+//text1.addEventListener('click', chahgeColor1);
+//text2.addEventListener('click', chahgeColor2);
+//text3.addEventListener('click', chahgeColor3);
 
 
 
@@ -760,69 +760,101 @@ const obj1 = {
  console.log (deepEqual (obj3, obj2)); // false
 
  //////////////lesson-8
-const studentsData = [
-  {
-    firstName: "Василий",
-    lastName: "Петров",
-    admissionYear: 2019,
-    courseName: "Java",
-  },
-  {
-    firstName: "Иван",
-    lastName: "Иванов",
-    admissionYear: 2018,
-    courseName: "JavaScript",
-  },
-  {
-    firstName: "Александр",
-    lastName: "Федоров",
-    admissionYear: 2017,
-    courseName: "Python",
-  },
-  {
-    firstName: "Николай",
-    lastName: "Петров",
-    admissionYear: 2019,
-    courseName: "Android",
-  },
-];
- class User {
-  constructor(options) {
-    this.firstName = options.firstName;
-    this.lastName = options.lastName;
-  }
-  get fullName() {
-    return `${this.firstName} ${this.lastName}`;
-  }
-}
-class Student extends User {
-   constructor(options) {
-    super(options);
-    this.admissionYear = options.admissionYear;
-    this.courseName = options.courseName;
-  }
-  get course() {
-    return new Date().getFullYear() - this.admissionYear;
-  } 
-}
-class Students {        ///////////// когда класс состоит из массива (создайте класс Students, который включает в себя: students (constructor, на основе массива)
-  constructor(data) {
-    this.students = data.map( 
-      (item) => new Student({
-          firstName: item.firstName,
-          lastName: item.lastName,
-          admissionYear: item.admissionYear,
-          courseName: item.courseName,
-        })                 /////////////// то вот так оно будет записываться
-    );
-  }
-  getInfo() {
-    this.students.sort((a, b) => a.course - b.course); //////// сортировка по course
-    console.log(
-      this.students.map((item) => `${item.fullName} - ${item.courseName}, ${item.course} курс `)
-    );
-  }
-}
+    const studentsData = [
+      {
+        firstName: "Василий",
+        lastName: "Петров",
+        admissionYear: 2019,
+        courseName: "Java",
+      },
+      {
+        firstName: "Иван",
+        lastName: "Иванов",
+        admissionYear: 2018,
+        courseName: "JavaScript",
+      },
+      {
+        firstName: "Александр",
+        lastName: "Федоров",
+        admissionYear: 2017,
+        courseName: "Python",
+      },
+      {
+        firstName: "Николай",
+        lastName: "Петров",
+        admissionYear: 2019,
+        courseName: "Android",
+      },
+    ];
+    class User {
+      constructor(options) {
+        this.firstName = options.firstName;
+        this.lastName = options.lastName;
+      }
+      get fullName() {
+        return `${this.firstName} ${this.lastName}`;
+      }
+    }
+    class Student extends User {
+      constructor(options) {
+        super(options);
+        this.admissionYear = options.admissionYear;
+        this.courseName = options.courseName;
+      }
+      get course() {
+        return new Date().getFullYear() - this.admissionYear;
+      } 
+    }
+    class Students {        ///////////// когда класс состоит из массива (создайте класс Students, который включает в себя: students (constructor, на основе массива)
+      constructor(data) {
+        this.students = data.map( 
+          (item) => new Student({
+              firstName: item.firstName,
+              lastName: item.lastName,
+              admissionYear: item.admissionYear,
+              courseName: item.courseName,
+            })                 /////////////// то вот так оно будет записываться
+        );
+      }
+      getInfo() {
+        this.students.sort((a, b) => a.course - b.course); //////// сортировка по course
+        console.log(
+          this.students.map((item) => `${item.fullName} - ${item.courseName}, ${item.course} курс `)
+        );
+      }
+    }
 
-const students = new Students(studentsData);
-console.log(students.getInfo());
+    const students = new Students(studentsData);
+    console.log(students.getInfo());
+
+
+    ////////////////lesson-9
+
+const colors = {
+  data: ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'],
+  [Symbol.iterator]() { // делаем массив data итерируемым
+   current: this.data;
+  },
+        next() {
+         if (this.current === this.data.length || this.current === undefined) { // если выполняется это условие, которое делает перебор color бесконечным
+         this.current = 0; // стартовая точка = 0
+          }
+         return {
+          value: this.data[this.current++] // проходится по массиву data
+        };
+      },
+    };
+
+const changeStyle = (id) => (click) => {
+  click.target.style.color = id.next().value;
+};
+
+const el1 = document.getElementById("text1");
+const el2 = document.getElementById("text2");
+const el3 = document.getElementById("text3");
+
+const elements = [el1, el2, el3];
+for (let i = 0; i < elements.length; i++) {
+  elements[i].addEventListener("click", changeStyle(Object.assign({}, colors))); // assign - копирует в Object св-ва color? т.е. changeStyle становится массивом цветов
+}
+// addEventListener("имя события", сама функция) - запускает событие click
