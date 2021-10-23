@@ -15,6 +15,9 @@ window.onclick = function(event) {
       if (+countPlus <= 50) {
           count.innerHTML++;
       }
+       if (+countPlus >= 30) {
+           count.innerHTML--;
+      }
   }
 
 document.getElementById("buttonCountMinus").onclick = () => {
@@ -30,6 +33,9 @@ let count2 = document.getElementById("buttonCountNumber2");
       let countPlus2 = count2.innerHTML;
       if (+countPlus2 <= 50) {
           count2.innerHTML++;
+      }
+       if (+countPlus2 >= 10) {
+           count2.innerHTML--;
       }
   }
 
@@ -47,6 +53,9 @@ let count3 = document.getElementById("buttonCountNumber3");
       if (+countPlus3 <= 50) {
           count3.innerHTML++;
       }
+      if (+countPlus3 >= 30) {
+           count3.innerHTML--;
+      }
   }
 
 document.getElementById("buttonCountMinus3").onclick = () => {
@@ -59,3 +68,4 @@ document.getElementById("buttonCountMinus3").onclick = () => {
 function viewDiv(){
   document.getElementById("age_block").style.display = "block";
 };
+
