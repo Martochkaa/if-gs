@@ -23,18 +23,18 @@ const dataArr = ((data) => {
 
 // записывает все, что произошло в fetch в content
 document.addEventListener('DOMContentLoaded', async function() {
-const content = await getResponse ()
-return content
+const content = await getResponse();
+return content;
 });
 
 async function getResponse() {
-const WriteContent = sessionStorage.getItem(content); // получить из памяти инфу
-if (!WriteContent) { // если в WriteContent ничего не записано, то запишем туда fetch
+const writeContent = sessionStorage.getItem(content); // получить из памяти инфу
+if (!writeContent) { // если в WriteContent ничего не записано, то запишем туда fetch
  try {
 const response = await fetch('https://fe-student-api.herokuapp.com/api/hotels/popular');
 const data = await response.json();
 sessionStorage.setItem('content', JSON.stringify(data)); // строчка которая отвечает за запоминание игформации в памяти 
-dataArr(data)
+dataArr(data);
 $(document).ready(function () {
   $(".slick__wrapper").slick({
     slidesToShow: 4,
@@ -47,8 +47,8 @@ $(document).ready(function () {
   console.log('Error');
 };
 } else {
-  const PositiveResponse = JSON.parse(WriteContent);
-  dataArr(PositiveResponse)
+  const positiveResponse = JSON.parse(writeContent);
+  dataArr(positiveResponse);
 
 
 $(document).ready(function () {
@@ -59,7 +59,7 @@ $(document).ready(function () {
     arrows: true,
   });
 });
-getResponse()
+getResponse();
 };
 }
 
