@@ -8,7 +8,6 @@ function loadSlider() {
     arrows: true,
   });
 }
-debugger
 
 async function getResponse() {
 const response = await fetch('https://fe-student-api.herokuapp.com/api/hotels/popular');
