@@ -43,6 +43,11 @@ body, ul, div, span {
     margin: 0 auto;
     padding: 0 16px;
   }
+  
+  .slick-slider{
+      display: flex;
+      justify-content: center;
+  }
 
 .slick-arrow {
     font-size: 0;
@@ -68,10 +73,10 @@ body, ul, div, span {
     color: #3077C6;
     font-size: 24px;
     margin-top: 24px;
+    display: flex;
   }
   .avalable-hotel-name {
     margin-bottom: 24px;
-    display: flex;
   }
 
   .location , .avalable-hotel-location {
@@ -225,7 +230,7 @@ label {
     background-position: top center;    
     overflow-y: hidden;
     overflow-x: hidden;
-    height: 1053px;
+    height: 900px;
 }
 
 header {
@@ -324,7 +329,7 @@ article {
 .city-date-form {
     width: 100%;
     margin-top: 24px;
-    margin-bottom: 240px;
+    margin-bottom: 130px;
     height: 64px;
     display: flex;
     flex-direction: row;
@@ -488,7 +493,7 @@ input:not(:focus):valid ~ .check-out-label {
     top: 590px;
     right: 294px;
     width: 294px;
-    height: 158px;
+    height: 500px;
     background-color: white;
     border-radius: 8px;
     padding: 26px 22px 22px;
@@ -572,39 +577,7 @@ input:not(:focus):valid ~ .check-out-label {
     text-align: center;
     width: 48px;
 }
-.age-selector {
-    display: none;
-    flex-direction: column;
-    z-index: index 1;
-  }
-  .hotels-panel {
-    justify-content: center;
-  }
-  .hotels-panel {
-    margin-top: 106px;
-    overflow: hidden;
-    text-align: left;
-  }
-  .year-selector {
-    border-radius: 1px;
-    border: #3077C6 1px solid;
-    color: #333;
-    font-size: 12px;
-    line-height: 14px;
-    margin-bottom: 12px;
-    width: 50%;
-  }
-  .age-container {
-    border-radius: 8px;
-    padding: 26px 22px 22px;
-  }
-  .selector-text {
-    font-size: 12px;
-    line-height: 14px;
-    margin-top: 16px;
-    margin-bottom: 12px;
-  }
-  
+
 .age-of-child {
     width: 218px;
     height: 28px;

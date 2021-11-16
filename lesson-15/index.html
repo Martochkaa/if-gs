@@ -44,36 +44,37 @@
             <a href="https://www.apple.com/ru/app-store/"><img class="apple-img" src="image/header-sprite.svg#app-store" alt="app-store"></a>
             </div>
         </article> 
-        <div class="filter-form hide display" id="filterForm">
+        <div class="filter-form hide" id="filterForm">
            <div class=counter-items-wrapper>
                 <div class="counter-item">
                     <span class="counter-label">Adults</span>
-                    <div class="buttons-input-wrapper"> <input id="adultsInput" type="text" name="adults">
-                        <input disabled="disabled" type="button" class="counter-plus-minus-gray counter-btn" value="-" id="btnCounterAdultMinus" data-direction="minus">
-                        <p class="counter-current-value" id="counterAdult">0</p>
-                        <input type="button" class="counter-plus-minus-blue counter-btn" id="btnCounterAdultPlus" value="+" data-direction="plus">
+                    <div class="buttons-input-wrapper"> 
+                        <button type="button" class="counter-plus-minus-gray counter-btn" id="btnCounterAdultMinus" data-direction="minus">-</button>
+                        <input class="counter-current-value" type="text" id="counterAdult" value="0" form="mainForm"></input>
+                        <button type="button" class="counter-plus-minus-blue counter-btn" id="btnCounterAdultPlus" data-direction="plus">+</button>
                     </div>
                 </div>
                 <div class="counter-item">
                     <span class="counter-label">Children</span>
-                    <div class="buttons-input-wrapper"> <input id="childrenInput" type="text" name="children">
-                        <input disabled="disabled" type="button" class="counter-plus-minus-gray counter-btn-children" id="btnCounterChildrenMinus" value="-" data-direction="minus">
-                        <p class="counter-current-value-children" id="counterChildren">0</p>
-                        <input type="button" class="counter-plus-minus-blue counter-btn-children" id="btnCounterChildrenPlus" value="+" data-direction="plus">
+                    <div class="buttons-input-wrapper"> 
+                        <button type="button" class="counter-plus-minus-gray counter-btn-children" id="btnCounterChildrenMinus" data-direction="minus">-</button>
+                        <input class="counter-current-value-children" id="counterChildren" type="text" value="0" form="mainForm"></input>
+                        <button type="button" class="counter-plus-minus-blue counter-btn-children" id="btnCounterChildrenPlus" data-direction="plus" >+</button>
                     </div>
                 </div>
                 <div class="counter-item">
                     <span class="counter-label">Rooms</span>
-                    <div class="buttons-input-wrapper">   <input id="roomsInput" type="text" name="rooms">                                        
-                        <input disabled="disabled" type="button" class="counter-plus-minus-gray counter-btn" id="btnCounterRoomsMinus" value="-" data-direction="minus">
-                        <p class="counter-current-value" type="text" id="counterRooms">0</p> 
-                        <input type="button" class="counter-plus-minus-blue counter-btn" value="+" id="btnCounterRoomsPlus" data-direction="plus">
+                    <div class="buttons-input-wrapper">                                           
+                        <button type="button" class="counter-plus-minus-gray counter-btn" id="btnCounterRoomsMinus" data-direction="minus">-</button>
+                        <input class="counter-current-value" type="text" id="counterRooms" value="0" form="mainForm"></input>
+                        <button type="button" class="counter-plus-minus-blue counter-btn" id="btnCounterRoomsPlus" data-direction="plus">+</button>
                     </div>
                 </div>
-                <div class="age-selector" id="childAgeQuastion"><p class="selector-text">What is the age of the child you’re<br>travelling with?</p></div></div>
             </div>
-            </div>
-      
+            <span class="age-of-child hide" id="childAgeQuastion">What is the age of the child you’re <br> travelling with?</span><br>
+            <div id="selectsWrapper"></div>
+        </div>  
+    </div>
       
 
 
@@ -306,8 +307,6 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	<script src="js/slick.js"></script>
-    <script src="slider.js"></script>
-    <script src="slick.min.js"></script>
     <script src="main.js"></script>
 </body>
 </html>
