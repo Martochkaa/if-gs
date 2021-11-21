@@ -1,0 +1,71 @@
+@import url(fonts.css);
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Roboto";
+}
+
+a {
+  text-decoration: none;
+}
+
+h2 {
+  text-align: center;
+  font-size: 40px;
+  font-family: "Roboto";
+  font-weight: 500;
+}
+
+.container_hotels {
+  max-width: 1264px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+ul {
+  list-style: none;
+}
+
+.slick-arrow {
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 100%;
+  position: absolute;
+  background: url(../img/icons/arrowNext.svg) center center/auto no-repeat;
+  background-color: #f3f3f4;
+  right: -10px;
+  top: 30%;
+  -webkit-transition: ease-in 0.2s;
+  transition: ease-in 0.2s;
+}
+
+button {
+  border: none;
+}
+
+.container {
+  background-color: #eaf0f9;
+  padding: 120px 0;
+}
+
+.favorite-wrapper {
+  margin-top: 104px;
+}
+
+.text_hotel {
+  color: #3077C6;
+  font-size: 24px;
+  margin-top: 24px;
+}
+
+.location {
+  margin-top: 24px;
+  font-size: 24px;
+  color: #BFBFBF;
+  max-width: 300px;
+}

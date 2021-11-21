@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel search site</title>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-section">
+        <header>
+            <div class="top-icon-logo">
+                <img class=icon-logo src="image/header-sprite.svg#logo" alt="logo">
+            </div>
+            <nav class="stays animated-header-line"><a href="#" class="header-link">Stays</a></nav>
+            <nav class="attractions animated-header-line"><a href="#" class="header-link">Attractions</a></nav>
+            <nav class="top-icon-night"></nav>
+            <nav class="top-icon-account"></nav>
+            <nav class="top-icon-burger"></nav>
+        </header>
+        <h1 class="heading_top">Discover stays<br>to live, work or just relax</h1>    
+        <article>
+            <form action="/" method="post" id="mainForm">
+                <div class="city-date-form" autofocus>
+                    <div class="city-input-container col-md-12">
+                        <input class="city-input input-text col-md-12" id="citySearchInput" type="text" name="search" required autocomplete="off">
+                        <label class="city-input-label">Your destination or hotel name</label>
+                    </div>                        
+                    <div class="top-check-container col-md-12">
+                        <div class="container_calendar">
+                            <input class="calendar check-in-container col-md-6" type="date" name="calendar" placeholder="Check-in — Check-out">
+                            <input class="calendar check-in-container col-md-6" type="date" name="calendar">
+                            </div>
+                        
+                    </div>
+                    <input class="guest-input input-text col-md-12" id="guestInput" type="text" placeholder="2 Adults — 0 Children — 1 Room" autocomplete="off" >
+                    <button class="search-button col-md-12" id="searchHotel" type="submit" form="mainForm">Search</button>
+                </div>
+            </form>
+            <div class="apple-google">
+            <a href="https://play.google.com"><img class="google-img" src="image/header-sprite.svg#google" alt="google market"></a>
+            <a href="https://www.apple.com/ru/app-store/"><img class="apple-img" src="image/header-sprite.svg#app-store" alt="app-store"></a>
+            </div>
+        </article> 
+        <div class="filter-form hide" id="filterForm">
+           <div class=counter-items-wrapper>
+                <div class="counter-item">
+                    <span class="counter-label">Adults</span>
+                    <div class="buttons-input-wrapper"> 
+                        <button type="button" class="counter-plus-minus-gray counter-btn" id="btnCounterAdultMinus" data-direction="minus">-</button>
+                        <input class="counter-current-value" type="text" id="counterAdult" value="0" form="mainForm"></input>
+                        <button type="button" class="counter-plus-minus-blue counter-btn" id="btnCounterAdultPlus" data-direction="plus">+</button>
+                    </div>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-label">Children</span>
+                    <div class="buttons-input-wrapper"> 
+                        <button type="button" class="counter-plus-minus-gray counter-btn-children" id="btnCounterChildrenMinus" data-direction="minus">-</button>
+                        <input class="counter-current-value-children" id="counterChildren" type="text" value="0" form="mainForm"></input>
+                        <button type="button" class="counter-plus-minus-blue counter-btn-children" id="btnCounterChildrenPlus" data-direction="plus" >+</button>
+                    </div>
+                </div>
+                <div class="counter-item">
+                    <span class="counter-label">Rooms</span>
+                    <div class="buttons-input-wrapper">                                           
+                        <button type="button" class="counter-plus-minus-gray counter-btn" id="btnCounterRoomsMinus" data-direction="minus">-</button>
+                        <input class="counter-current-value" type="text" id="counterRooms" value="0" form="mainForm"></input>
+                        <button type="button" class="counter-plus-minus-blue counter-btn" id="btnCounterRoomsPlus" data-direction="plus">+</button>
+                    </div>
+                </div>
+            </div>
+            <span class="age-of-child hide" id="childAgeQuastion">What is the age of the child you’re <br> travelling with?</span><br>
+            <div id="selectsWrapper"></div>
+        </div>  
+    </div>
+      
+
+
+
+    
+    <section class="available-hotels col-md-12 hide" id="avalableHotels">
+        <h1 class="available-hotels-title section-title col-md-12">Available hotels</h1>
+        <div class="available-hotels-items col-md-12" id="avalableHotelsItems"></div>
+    </section>
+
+
+
+
+
+
+
+
+    <section class="Wat_do_we_offer">
+        <h1 class="headline">What do we offer</h1>
+        <div class="all_containers">
+        <div class="container_headphones">
+    <img src="LinkedSprite.svg#headphones" alt="headphones" class="headphones">
+    <p class="text_headphones">Support 24/7</p> 
+    </div>
+    <div class="container_communicate">
+    <img src="LinkedSprite.svg#communicate" alt="communicate" class="communicate">
+    <p class="text_communicate">Communicate directly</p> 
+    </div>
+    <div class="container_gadgets">
+    <img src="LinkedSprite.svg#gadgets" alt="gadgets"  class="gadgets">
+    <p class="text_gadgets">Book online</p> 
+    </div>
+    <div class="container_like">
+    <img src="LinkedSprite.svg#like" alt="like" class="like_img">
+    <p class="text_like">Real guest reviews</p>
+    </div>
+    </div>
+    </section>
+    
+
+
+
+    <section class="container_slider">
+		<div class="container_hotels">
+			<h1 class="Home_guest_love">Homes guests loves</h1>
+
+			<div id="content" class="favorite-wrapper slick__wrapper">
+
+			</div>
+		</div>
+	</section>
+    
+
+
+
+
+
+    
+        <section class="The_best_destinations">
+            <h1 class="The_best_destinations_heading">The best destinations</h1> 
+            <div class="seat_selection_buttons">
+                <input class="Regions" type="button" value="Regions" placeholder="Regions">
+                <input class="Cities" type="button" value="Cities" placeholder="Cities">
+                <input class="Places" type="button" value="Places of interest" placeholder="Places of interest">
+            </div>
+            <div class="countries">
+                <div class="Maldives">
+                    <img src="image/Maldives.svg" alt="Maldives" class="Maldives_img">
+                    <p class="Maldives_text">Maldives</p>
+                    <input class="Maldives_book_now" type="button" value="Book now" placeholder="Book now">
+                </div>
+                <div class="Spain">
+                    <img src="image/Spain.svg" alt="Spain" class="Spain_img">
+                    <p class="Spain_text">Spain</p>
+                    <input class="Spain_book_now" type="button" value="Book now" placeholder="Book now">
+                </div>
+                <div class="Norway">
+                    <img src="image/Norway.svg" alt="Norway" class="Norway_img">
+                    <p class="Norway_text">Norway</p>
+                    <input class="Norway_book_now" type="button" value="Book now" placeholder="Book now">
+                </div>
+                <div class="Island">
+                    <img src="image/Island.svg" alt="Island" class="Island_img">
+                    <p class="Island_text">Island</p>
+                    <input class="Island_book_now" type="button" value="Book now" placeholder="Book now">
+                </div>
+            <button class="arrow_to_down">^</button>
+            </div>
+            </section>
+    
+            <section class="sign_up">
+                <div class="discount">
+            <img class="user_img" src="image/user.png" alt="user_img">
+    <div class="container_sign_up">
+    <label class="sign_up_text" for="button">Sign up and get 20% off your first booking</label>
+    <input class="button_sing_up" type="button" value="Sign up" placeholder="Sign up">
+    </div>
+                </div>
+                <a href="#" class="close"></a>
+            </section>
+    
+    
+            
+            <section class="Guests_reviews">
+            <h1 class="Guests_reviews_heading">Guests reviews</h1>
+            <div class="Guests_img">
+        <div class="Ubud">
+    <img class="Ubud_img" src="image/ubud.png" alt="Ubud_img">
+    <div class="price"> <p class="price_text"> From 250 USD </p> </div>
+    <div class="mention">
+        <div class="about_the_hotel">
+        <h3>Ubud Bali Resort&SPA</h3>
+        <p class="place_ubud">Bali, Indonesia</p>
+        </div>
+        <div class="grade">
+        <input class="rating" type="button" value="9.4" placeholder="9,4">
+        <label for="button" class="rewiews">1324 reviews</label>
+        </div>
+    </div>    
+    <div class="user">
+    <img class="guest_photo" src="image/Vector.png" alt="guest photo">
+    <div class="information_about_user">
+        <p class="name">Hanna Ivanova</p>
+        <p class="homeland"> &#127482;&#127462; Ukraine</p>
+    </div>
+    </div>
+        <p class="commentary"> Great location, really pleasant and clean rooms, but the thing that makes this such a good place to stay are the staff. All of the people are incredibly helpful and generous with their time and advice. </p>
+            </div>
+    
+    
+    
+        <div class="King_Kong">
+            <img class="King_img" src="image/king.png" alt="King_img">
+                <div class="price"> <p class="price_text"> From 40 USD </p> </div>
+            <div class="mention">
+                <div class="about_the_hotel">            
+                    <h3>King Kong Hostel</h3>
+                    <p class="place_king">Rotterdam, Netherlands</p>
+                </div>
+                <div class="grade">
+                    <input class="rating" type="button" value="8.9" placeholder="8.9">
+                    <label class="rewiews" for="button">2016 reviews</label>
+                </div>    
+            </div>    
+            <div class="user">
+                <img class="guest_photo" src="image/Vector.png" alt="guest photo">
+                <div class="information_about_user">
+                    <p class="name">Adam Smith</p>
+                    <p class="homeland"> &#127482;&#127480; USA</p>
+                </div>
+            </div>
+                    <p class="commentary"> I've been in this hostel for a month and here is the best hostel of all
+                        Excellent management of excellent and ethical staff and bedrooms Bathrooms are always clean and excellent
+                        Most importantly, those who work here are kind and good-natured. </p>
+        </div>        
+    
+    
+        <div class="Rokoko">
+            <img class="Rokoko_img" src="image/rokoko.png" alt="Rokoko_img">
+                <div class="price"> <p class="price_text"> From 100 USD </p></div>
+            <div class="mention">
+                <div class="about_the_hotel">
+                    <h3>Rokoko Hotel</h3>
+                    <p class="place_rokoko">Ourika, Marocco</p>
+                </div>
+                <div class="grade">
+                    <input class="rating" type="button" value="9.1" placeholder="9.1">
+                    <label class="rewiews" for="button">2815 reviews</label>
+                </div>
+            </div>    
+                <div class="user">
+                <img class="guest_photo" src="image/Vector.png" alt="guest photo">
+                    <div class="information_about_user">
+                    <p class="name">Anika Messer</p>
+                    <p class="homeland"> &#127465;&#127466; Germany</p>
+                    </div>
+                </div>
+                    <p class="commentary"> Efficient, friendly, professional, and appropriately attentive. Great hotel in a great location. Easy access to all the surrounding historical sites. Staff is fantastic. Will definitely stay at this location during my next stay in Marocco. </p>
+        </div>        
+    </div>
+            </section>
+    
+    <section class="sign_up_on_the_small_screen">
+        <a href="#" class="close_on_the_small_screen"></a>
+        <div class="label_triphouse">
+    <img class="label_triphous_img" src="image/logo_vector.png" alt="Triphouse">
+        </div>
+        <p class="sign_up_on_the_small_screen_text" >Sign up in the app and get 20% <br> off your first booking</p>
+        <a href="#" class="install">Install</a>
+    </section>
+    
+    
+    
+    
+    <footer class="last_block">
+    </div>
+    <div class="heading_logo">
+        <img class="heading_logo_last" src="image/logo_vector.png" alt="heading_logo">
+    </div>
+    <div class="container">
+    <div class="container_about">
+        <ul>
+        <li class="heading_about">About</li>
+        <li class="list_items">Now Triphouse works</li>
+        <li class="list_items">Careers</li>
+        <li class="list_items">Privacy</li>
+        <li class="list_items">Terms</li>
+    </ul>
+    </div>
+    <div class="container_property_types">
+        <ul>
+        <li class="heading_property">Property types</li>
+        <li class="list_items">Guest houses</li>
+        <li class="list_items">Hotels</li>
+        <li class="list_items">Apartments</li>
+        <li class="list_items">Villas</li>
+        <li class="list_items">Holiday homes</li>
+        <li class="list_items">Hostels</li>
+    </ul>
+    </div>
+    <div class="container_support">
+        <ul>
+        <li class="heading_support">Support</li>
+        <li class="list_items">Contact Customer Service</li>
+        <li class="list_items">FAQ</li>
+    </ul>
+    </div>
+    </div>
+        <p class="caption">&copy; 2020 Triphouse, lnc. All right reserved</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="js/slick.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
