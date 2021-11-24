@@ -1,28 +1,13 @@
 {
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.24.0",
-    "husky": "^7.0.2",
-    "jest": "^27.1.0",
-    "lint-staged": "^11.1.2",
-    "prettier": "2.4.1"
-  },
+  "name": "test",
+  "version": "0.1.1",
+  "description": "Validate files with ESLint",
   "scripts": {
-    "prepare": "husky install",
-    "test": "jest"
+    "test": "eslint src"
   },
-  "lint-staged": {
-    "*.(js|jsx)": [
-      "npm run lint:write",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+  "devDependencies": {
+    "eslint": "^2.0.0",
+    "eslint-config-ideal": "^0.1.0"
   }
+
 }

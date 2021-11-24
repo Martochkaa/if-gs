@@ -16,7 +16,6 @@ const guestInput = document.getElementById('guestInput');
 document.addEventListener('DOMContentLoaded', (() => {
   counterChildren.value = '0';
   counterAdult.value = '0';
-  counterRooms.value = '0';
 }));
 
 // слайдер для Home guests loves
