@@ -15,6 +15,7 @@ const data = await response.json();
 
  const homesInfoPanel = document.querySelector(".favorite-wrapper");
 
+ 
  data.forEach((item) => { const hotelsItem = document.createElement("div");
  hotelsItem.classList.add("guests-Homes");
  hotelsItem.innerHTML = `

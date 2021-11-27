@@ -1,3 +1,10 @@
+export const filterForm = document.getElementById('filterForm');
+export const counterChildren = document.getElementById('counterChildren');
+const childAgeQuastion = document.getElementById('childAgeQuastion');
+export const counterAdult = document.getElementById('counterAdult');
+export const btnCounterChildrenMinus = document.getElementById('btnCounterChildrenMinus');
+export const btnCounterChildrenPlus = document.getElementById('btnCounterChildrenPlus');
+
 export function initDropdownList() {
     const select = document.createElement("select");
     select.classList.add("child-age-select");
@@ -23,8 +30,8 @@ export function initDropdownList() {
                         </select>`;
       selectsWrapper.appendChild(select);
   }
-  btnCounterChildrenPlus.addEventListener("click", initDropdownList);
   
+ export function  newSelect() {
   btnCounterChildrenPlus.addEventListener("click", () => {
     switch (counterChildren.value) {
       case "2":
@@ -98,8 +105,33 @@ export function initDropdownList() {
         break;      
     }
   });
+  }
 
 export  function removeDropdownList() {
-    const lastSelectWrapperChild = selectsWrapper.lastChild;
-    lastSelectWrapperChild.parentNode.removeChild(lastSelectWrapperChild);
-  }
+  const lastSelectWrapperChild = selectsWrapper.lastChild;
+  lastSelectWrapperChild.parentNode.removeChild(lastSelectWrapperChild);
+}
+
+export function counterZero() {
+document.addEventListener('DOMContentLoaded', (() => {
+    counterChildren.value = '0';
+    counterAdult.value = '0';
+  }));
+}
+
+
+
+export function minusChildren() {
+  if (counterChildren.value !== '0') {
+    btnCounterChildrenMinus.classList.remove('counter-plus-minus-gray');
+    btnCounterChildrenMinus.classList.add('counter-plus-minus-blue');
+    filterForm.style.height = '267px';
+    childAgeQuastion.classList.remove('hide');
+  } else {
+    btnCounterChildrenMinus.classList.remove('counter-plus-minus-blue');
+    btnCounterChildrenMinus.classList.add('counter-plus-minus-gray');
+    filterForm.style.height = '158px';
+    childAgeQuastion.classList.add('hide');
+  };
+};
+
