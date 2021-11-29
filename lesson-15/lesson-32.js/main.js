@@ -1,10 +1,8 @@
-import { removeDropdownList, initDropdownList, filterForm, btnCounterChildrenPlus, counterChildren, counterAdult, btnCounterChildrenMinus } from 'select-age.js';
-import { getAvalableHotels, Closer, minusAdult, counterRooms, counterAdult, counterChildren } from 'slider-avalable.js';
-import { childrenWithoutAdults } from 'children-with-adults.js';
-import { counterZero, newSelect, minusChildren, btnCounterChildrenMinus } from './select-age';
-import { counterChildrenForInput } from './counterChildren';
-import { btnCounterRoomsMinus, minusRooms } from './counterRooms';
-
+import { removeDropdownList, newSelect, minusChildren, initDropdownList, filterForm, btnCounterChildrenPlus, btnCounterChildrenMinus, counterAdultAndRooms } from './select-age.js';
+import { getAvalableHotels, Closer, minusAdult, counterRooms, counterAdult, counterChildren, counterZero } from './slider-avalable.js';
+import { childrenWithoutAdults } from '../children-with-adults.js';
+import { counterChildrenForInput } from '../counterChildren.js';
+import { btnCounterRoomsMinus, minusRooms } from '../counterRooms.js';
 
 counterZero();
 
@@ -24,27 +22,6 @@ guestInput.addEventListener('click', (elem) => {
 });
 
 Closer();
-
-const counterAdultAndRooms = function () {
-  const btns = document.querySelectorAll('.counter-btn');
-
-  btns.forEach(btn => {
-    btn.addEventListener("click", function () {
-      const direction = this.dataset.direction;
-      const inp = this.parentElement.querySelector('.counter-current-value');
-      const currentValue = + inp.value;
-      let newValue;
-
-      if (direction === "plus") {
-        newValue = currentValue + 1 <= 30 ? currentValue + 1 : 30;
-      } else {
-        newValue = currentValue - 1 > 0 ? currentValue - 1 : 0;
-      }
-
-      inp.value = newValue;
-    });
-  });
-};
 
 counterAdultAndRooms();
 counterChildrenForInput();

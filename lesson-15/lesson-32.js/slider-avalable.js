@@ -5,6 +5,8 @@ export const btnCounterAdultMinus = document.getElementById('btnCounterAdultMinu
 export const counterRooms = document.getElementById('counterRooms');
 export const filterForm = document.getElementById('filterForm');
 
+
+
 function slickForAvalableHotels(){
     $(".available-hotels-items").slick({
       dots: false,
@@ -57,10 +59,11 @@ function slickForAvalableHotels(){
         availableHotelsItemsSlider.append(availableHotelsItem);
     });
   });
+
   
   
   //fetch response for slicker for available home
-async export function getAvalableHotels() {
+  async export function getAvalableHotels() {
   event.preventDefault();
   const avalableHotelsItems = document.getElementById('avalableHotelsItems');
   while (avalableHotelsItems.firstChild) {
@@ -75,9 +78,12 @@ async export function getAvalableHotels() {
     console.log('Error');
   };
 };
+ 
+export function Closer() {
+  filterForm.classList.add('hide');
+};
   
-  
-import function minusAdult() {
+export function minusAdult() {
   if (counterAdult.value !== '0') {
     btnCounterAdultMinus.classList.remove('counter-plus-minus-gray');
     btnCounterAdultMinus.classList.add('counter-plus-minus-blue');
@@ -87,11 +93,15 @@ import function minusAdult() {
   };
 };
 
-export function Closer() {
-  filterForm.classList.add('hide');
-};
 btnCounterAdultMinus.addEventListener('click', minusAdult);
 btnCounterAdultMinus.addEventListener('click', childrenWithoutAdults);
 btnCounterAdultMinus.addEventListener('click', dimnamicInputValueChanger);
 counterAdult.addEventListener('change', dimnamicInputValueChanger);
 counterChildren.addEventListener('change', dimnamicInputValueChanger);
+
+export function counterZero() {
+  document.addEventListener('DOMContentLoaded', (() => {
+      counterChildren.value = '0';
+      counterAdult.value = '0';
+    }));
+  };

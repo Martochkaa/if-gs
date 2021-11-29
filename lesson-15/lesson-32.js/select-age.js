@@ -1,7 +1,6 @@
 export const filterForm = document.getElementById('filterForm');
-export const counterChildren = document.getElementById('counterChildren');
+const counterChildren = document.getElementById('counterChildren');
 const childAgeQuastion = document.getElementById('childAgeQuastion');
-export const counterAdult = document.getElementById('counterAdult');
 export const btnCounterChildrenMinus = document.getElementById('btnCounterChildrenMinus');
 export const btnCounterChildrenPlus = document.getElementById('btnCounterChildrenPlus');
 
@@ -112,12 +111,8 @@ export  function removeDropdownList() {
   lastSelectWrapperChild.parentNode.removeChild(lastSelectWrapperChild);
 }
 
-export function counterZero() {
-document.addEventListener('DOMContentLoaded', (() => {
-    counterChildren.value = '0';
-    counterAdult.value = '0';
-  }));
-}
+
+
 
 
 
@@ -135,3 +130,23 @@ export function minusChildren() {
   };
 };
 
+export function counterAdultAndRooms () {
+  const btns = document.querySelectorAll('.counter-btn');
+
+  btns.forEach(btn => {
+    btn.addEventListener("click", function () {
+      const direction = this.dataset.direction;
+      const inp = this.parentElement.querySelector('.counter-current-value');
+      const currentValue = + inp.value;
+      let newValue;
+
+      if (direction === "plus") {
+        newValue = currentValue + 1 <= 30 ? currentValue + 1 : 30;
+      } else {
+        newValue = currentValue - 1 > 0 ? currentValue - 1 : 0;
+      }
+
+      inp.value = newValue;
+    });
+  });
+};
